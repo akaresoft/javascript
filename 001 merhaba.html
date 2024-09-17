@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Giriş</title>
+<style>
+
+#message{
+        background-color: yellow;
+        color:blue;
+    }
+</style>
+
 </head>
 <body>
     
- <h1>Merhaba</h1>
+ <div id="message"></div>
+
+ <script>
+    //Ekrana mesaj var yazmak için aşağıdaki kodu kullanıyoruz
+   document.getElementById("message").innerHTML = "Merhaba JavaScript";
+</script>
 
 </body>
 </html>
