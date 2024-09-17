@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ile Toplama</title>
+    <style>
+        #sonuc{
+            background-color: orange; color:white; font-weight: bold;
+        }
+    </style>
+    <script>
+
+        function bolumHesapla(){
+            let s1, s2, bolum;
+             s1=parseInt(document.getElementById("sayi1").value);
+             s2=parseInt(document.getElementById("sayi2").value);
+            if(s2!=0){
+                bolum=s1/s2; 
+                document.getElementById("sonuc").innerHTML="Bölüm :"+bolum;   
+            } else{ 
+                document.getElementById("sonuc").innerHTML="Sıfıra bölünemez";
+            }
+            
+        }
+
+        function toplamHesapla(){
+            let s1, s2, toplam;
+             s1=parseInt(document.getElementById("sayi1").value);
+             s2=parseInt(document.getElementById("sayi2").value);
+            toplam=s1+s2;
+            document.getElementById("sonuc").innerHTML="Toplam :"+toplam;
+        }
+
+        function cikarHesapla(){
+            let s1, s2, cikarim;
+             s1=parseInt(document.getElementById("sayi1").value);
+             s2=parseInt(document.getElementById("sayi2").value);
+            cikarim=s1-s2;
+            document.getElementById("sonuc").innerHTML="Çıkarım :"+cikarim;
+        }
+
+        function carpHesapla(){
+            let s1, s2, carpim;
+             s1=parseInt(document.getElementById("sayi1").value);
+             s2=parseInt(document.getElementById("sayi2").value);
+            carpim=s1*s2;
+            document.getElementById("sonuc").innerHTML="Çarpim :"+carpim;
+        }
+     </script> 
+</head>
+<body>  
+    <label for="">Sayı 1:</label>
+    <input type="text" id="sayi1"> <br>
+
+    <label for="">Sayı 2:</label> 
+    <input type="text" id="sayi2"> <br>
+
+    <div id="sonuc"></div> <br>
+    <button onclick="toplamHesapla()">Topla</button>
+    <button onclick="carpHesapla()">Çarpım</button>
+    <button onclick="bolumHesapla()">Bölüm</button>
+    <button onclick="cikarHesapla()">Çıkarım</button>
+  
+</body>
+</html>
