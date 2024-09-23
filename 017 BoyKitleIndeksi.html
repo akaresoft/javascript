@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Kilo:</label>
+    <input type="text" name="kilo" id="kilo"> <br>
+
+    <label for="">Boy:</label>
+    <input type="text" name="boy" id="boy"> <br>
+
+    <button onclick="hesapla()">Hesapla</button>
+
+<div id="bki"></div>
+<div id="sonuc"></div>
+
+<script>
+    function hesapla(){
+        let kilo, boy, bki, durum="";
+         kilo=parseFloat(document.getElementById("kilo").value);
+         boy=parseFloat(document.getElementById("boy").value);
+
+       
+         bki= (kilo)/(boy*boy);
+         document.getElementById("bki").innerHTML=bki;
+         console.log("BKi"+bki);
+
+        if (bki<20)
+            durum="Zayıf";
+        else if (bki>=20 && bki<25)
+            durum="Normal";
+        else if (bki>=25 && bki<30)
+            durum="Hafif Şişman";
+        else if (bki>=30 && bki<35)
+            durum="Şişman";
+        else if (bki>=35 && bki<45)
+            durum="Sağlık açısından önemli";
+        else if (bki>=45 && bki<50)
+            durum="Aşırı şişman";
+        else if(bki>=50)
+            durum="Morbid"
+            console.log("Sonuç"+durum);
+        document.getElementById("sonuc").innerHTML=durum;
+    }
+   
+
+</script>
+</body>
+</html>

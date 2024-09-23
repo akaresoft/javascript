@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Değiş</title>
+    <style>
+        #takim{font-size: 40px;}
+    </style>
+</head>
+<body>
+    <div id="takim"></div>
+
+    <button onclick="fener()">Fenerbahçe</button>
+    <button onclick="besiktas()">Beşiktaş</button> 
+    <button onclick="galatasaray()">Galatasaray</button>
+
+<script>
+        function fener(){
+            document.getElementById("takim").innerHTML="Fener";
+            document.getElementById("takim").style.color = "blue";
+            document.getElementById("takim").style.background = "yellow";
+        }
+
+        function besiktas(){
+            document.getElementById("takim").innerHTML="Beşiktaş";
+            document.getElementById("takim").style.color = "white";
+            document.getElementById("takim").style.background = "black";
+
+        }
+        function galatasaray(){
+            document.getElementById("takim").innerHTML="Galatasaray";
+            document.getElementById("takim").style.color = "yellow";
+            document.getElementById("takim").style.background = "red";
+
+        }
+</script>
+</body>
+</html>
