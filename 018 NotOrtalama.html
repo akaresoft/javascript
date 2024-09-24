@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kirmizi{ background-color: red; color:white;}
+        .turuncu{ background-color: orange; color:white;}
+        .kahve{ background-color: brown; color:white;}
+        .yesil{ background-color: green; color:white;}
+        .mavi{background-color: blue; color:white;}
+        #sonuc{font-size: 40px;}
+    </style>
+</head>
+<body>
+    <label for="">Not1:</label>
+    <input type="text" name="not1" id="not1"> <br>
+
+    <label for="">Not2:</label>
+    <input type="text" name="not2" id="not2"> <br>
+
+    <label for="">Not3:</label>
+    <input type="text" name="not3" id="not3"> <br>
+    <button onclick="hesapla()">Hesapla</button>
+
+<div id="ortalama"></div>
+<div id="sonuc"></div>
+<script>
+    function hesapla(){
+        let n1, n2, n3, ortalama,durum="";
+         n1=parseFloat(document.getElementById("not1").value);
+         n2=parseFloat(document.getElementById("not2").value);
+         n3=parseFloat(document.getElementById("not3").value);
+         
+        ortalama=(n1+n2+n3)/3;
+        document.getElementById("ortalama").innerHTML=ortalama;
+    
+        if (ortalama>=0 && ortalama<50){
+            durum="Zayıf";
+            document.getElementById('sonuc').classList.remove();
+            document.getElementById('sonuc').classList.add('kirmizi');
+        }
+        else if (ortalama>=50 && ortalama<55){
+            durum="Geçer";
+            document.getElementById('sonuc').classList.remove();
+            document.getElementById('sonuc').classList.add('turuncu');
+        }
+        else if (ortalama>=55 && ortalama<70){
+            durum="Orta";
+            document.getElementById('sonuc').classList.remove();
+            document.getElementById('sonuc').classList.add('kahve');
+        }
+           
+        else if (ortalama>=70 && ortalama<85){
+            durum="İyi";
+            document.getElementById('sonuc').classList.remove();
+            document.getElementById('sonuc').classList.add('yesil');
+        }
+        
+        else if (ortalama>=85 && ortalama<=100){
+            durum="Pekiyi";
+            document.getElementById('sonuc').classList.remove();
+            document.getElementById('sonuc').classList.add('mavi');
+        }
+            
+        document.getElementById("sonuc").innerHTML=durum;
+    }
+   
+
+</script>
+</body>
+</html>

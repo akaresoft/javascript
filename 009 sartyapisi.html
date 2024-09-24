@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript Şart Yapısı  </title>
+    <script>
+        function kontrol(){
+            let dogumtarihi, yas;
+
+            dogumtarihi = parseInt(document.getElementById("dogumtarihi").value);
+            yas = 2024-dogumtarihi;
+            
+            if(yas>=18){
+                alert("Yaşınız:"+yas+" bu siteye girebilirsiniz"); 
+            }else{
+                alert("Yaşınız:"+yas+" Maalesef, giriş yasak");
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="">Doğum Tarihi(Yıl)</label>
+    <input type="text" name="dogumtarihi" id="dogumtarihi" maxlength="4">
+    <button onclick="kontrol()">Giriş</button> 
+
+</body>
+</html>

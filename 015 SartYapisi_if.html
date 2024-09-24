@@ -24,8 +24,10 @@
 <body>
         <label for="">Not1:</label>
         <input type="text" name="not1" id="not1"> <br>
+
         <label for="">Not2:</label>
         <input type="text" name="not2" id="not2"> <br>
+        
         <button onclick="hesapla()">Hesapla</button>
 
         <div id="ortalama"></div>
@@ -34,23 +36,21 @@
         <script>
             function hesapla(){
                 let n1, n2, ortalama, durum="";
-
-                const sonuc = document.getElementById('sonuc');
-
                  n1=parseFloat(document.getElementById("not1").value);
                  n2=parseFloat(document.getElementById("not2").value);
                  ortalama= (n1+n2)/2;
-                 document.getElementById("ortalama").innerHTML=ortalama;
+                 document.getElementById("ortalama").innerHTML
+                 ="Ortalamanız:"+ortalama;
                 if (ortalama>=50){
                     durum="Geçti";   
-                    sonuc.classList.add('yesil');
-                    sonuc.classList.remove('kirmizi');
+                    document.getElementById('sonuc').classList.add('yesil');
+                    document.getElementById('sonuc').classList.remove('kirmizi');
 
                 }
                 else{
                     durum="Kaldı";
-                    sonuc.classList.add('kirmizi');
-                    sonuc.classList.remove('yesil');
+                    document.getElementById('sonuc').classList.add('kirmizi');
+                    document.getElementById('sonuc').classList.remove('yesil');
                 }
 
                 document.getElementById("sonuc").innerHTML=durum;

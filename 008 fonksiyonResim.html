@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim değişme</title>
+    <style>
+        #ortala{margin:auto;
+            border:1px solid #e7e0e0;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>   
+    <div id="ortala">
+        <h3>JavaScript ile Resim Değiştirme</h3>
+        <img src="images/resim2.jpg" id="manzara" width="500"> <br>
+        
+        <button onclick="resimdegis1()"> 1 </button>
+        <button onclick="resimdegis2()"> 2 </button>
+        <button onclick="resimdegis3()"> 3 </button>
+    </div>       
+        <script>
+            function resimdegis1(){
+                document.getElementById("manzara").src = 'images/resim1.jpg';
+            }
+
+            function resimdegis2(){
+                document.getElementById("manzara").src = 'images/resim2.jpg';
+            }
+
+            function resimdegis3(){
+                document.getElementById("manzara").src = 'images/resim3.jpg';
+            }
+        </script>
+</body>
+</html>
