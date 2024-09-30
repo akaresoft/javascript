@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diziler Örnek 1</title>
+
+    <script>
+        let sonEleman, elemanSayisi;
+        const meyveler=['muz','kivi','çilek','ananas'];
+        document.write("Tüm elemanlar:"+meyveler+"<br>");
+        /* Dizinin elemanlarına erişim*/
+        document.write('Dizinin ilk elemanı:'+meyveler[0]+"<br>");
+        document.write('Dizinin ikinci elemanı:'+meyveler[1]+"<br>");
+        
+        /*Dizinin eleman sayısını bulma*/
+        
+        elemanSayisi= meyveler.length;
+        document.write('Eleman Sayısı:'+elemanSayisi+"<br>");
+
+        /* Diziden eleman silme - pop metodu */
+        document.write("<br> == Dizden eleman siliyoruz == <br>");
+        meyveler.pop();
+        elemanSayisi= meyveler.length;
+        document.write('Eleman Sayısı:'+elemanSayisi+"<br>");
+        document.write("Tüm elemanlar:"+meyveler+"<br>");
+
+        /*Diziye eleman ekleme - push metodu */
+        document.write("<br> == Diziye eleman ekleme == <br>");
+        meyveler.push("mango");
+        meyveler.push("üzüm");
+        document.write("Tüm elemanlar:"+meyveler+"<br>");
+
+        /* Shift(Kaydırma) işlemi*/
+        document.write("<br> == Dizi kaydırma - shift metodu == <br>");
+        meyveler.shift();
+        document.write("Tüm elemanlar:"+meyveler+"<br>");
+        elemanSayisi= meyveler.length;
+        document.write('Eleman Sayısı:'+elemanSayisi+"<br>");
+
+        /* Eleman değerini değiştirme */
+        document.write("== Eleman değerini değiştirme == <br>");
+        meyveler[0]="Mandalina";
+        document.write("Tüm elemanlar:"+meyveler+"<br>");
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

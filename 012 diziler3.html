@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diziler </title>
+    <script>
+
+    document.write("== Dizide eleman arama == <br>");
+    const cicekler=["lale","gül","menekşe","papatya","karanfil"];
+    document.write("Tüm elemanlar:"+ cicekler+"<br>");
+
+    
+    /* IndexOf Metodu */
+    let pozisyon1= cicekler.indexOf("gül")+1;
+    let pozisyon2= cicekler.indexOf("menekşe")+1;
+
+    document.write("Gülün pozisyonu :"+pozisyon1+"<br>");
+    document.write("Menekşe pozisyonu :"+pozisyon2+"<br>");
+
+
+    /* LastIndexOf Metodu */
+       cicekler.push("gül") ;
+       document.write("Tüm elemanlar:"+ cicekler+"<br>");
+       let sonPozisyon= cicekler.lastIndexOf("gül")+1;
+       document.write("Gülün son pozisyonu :"+sonPozisyon+"<br>");
+
+      /* include metodu */ 
+      let sonuc= cicekler.includes("menekşe");
+      document.write("Sonuç:"+ sonuc+"<br>");
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
