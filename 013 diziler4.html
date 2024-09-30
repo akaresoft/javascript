@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const notlar = [10, 20, 70, 70, 50];
+        /*find metodu ile şarta uyan eleman bulunur*/
+        let sonuc = notlar.find(gecenleriGetir);
+        document.write("Geçen eleman:"+ sonuc+"<br>");
+
+        let sonucIndex = notlar.findIndex(gecenleriGetir);
+        document.write("Geçenin sıra numarası:"+ sonucIndex+"<br>");
+
+
+         /* gecenleriGetir() fonksiyonu yukarıdaki dizide 50'den büyük eşit olan ilk değeri getirir*/  
+        function gecenleriGetir(value, index, array) {
+            return value >= 50;
+        }
+
+        /* Sıralama */
+        document.write("== Sıralama == <br>");
+        const isimler=["Ceyda","Ahmet","Mehmet","Ülgen","Şakir","İsmet"];
+        document.write(isimler+"<br>");
+        isimler.sort();
+        document.write(isimler+"<br>");
+        /* Yukarıdaki sıralama Türkçe karakterlerde sıralama yapMAMAktadır*/
+        
+        /* STRING SIRALAMA */
+        document.write("<br> == STRING  SIRALAMA== <br>")
+        var isimler2 = [
+                        {numara:1,adi:"Şeyda"},
+                        {numara:2,adi:"Çetin"},
+                        {numara:3,adi:"Vehbi"},
+                        {numara:4,adi:"İsmet"}
+                     ];
+
+        /* Sıralama işlemine başlıyoruz*/
+        sonuc= isimler2.sort(karsilastir);
+
+        function karsilastir(a, b) {
+            return a.adi.localeCompare(b.adi);
+        }
+        document.write( JSON.stringify(sonuc) +"<br>");
+
+        /* SAYI SIRALAMA*/
+        document.write("<br> == SAYI SIRALAMA== <br>")
+        function sayiKarsilastir(a, b) {
+            return a - b;
+        }
+        
+        var sayilar = [1, 11, 13, 22, 12, 2];
+        sayilar.sort(sayiKarsilastir);
+        document.write(sayilar);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
