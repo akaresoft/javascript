@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const maas=[10000, 20000, 30000, 25000, 35000];
+        document.write(maas+"<br>");
+
+        /* Dizinin eleman sayısı*/
+        let elemanSayisi= maas.length;
+        document.write("Dizinin eleman sayısı:"+elemanSayisi+"<br>");
+
+        /* Aranılan elemanı bulur */
+        let sonuc=maas.find(gecenleriGetir);
+        document.write("Bulunan eleman:"+sonuc+"<br>");
+        
+        /** Aranılan elemanın sıra numarasını bulur  **/
+        let sonuc2=maas.findIndex(gecenleriGetir);
+        document.write("Sıra Numarası:"+sonuc2+"<br>");
+
+        function gecenleriGetir(value, index, array){
+            return value>=25000;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

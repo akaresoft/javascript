@@ -11,21 +11,23 @@
     document.write("Tüm elemanlar:"+ cicekler+"<br>");
 
     
-    /* IndexOf Metodu */
-    let pozisyon1= cicekler.indexOf("gül")+1;
-    let pozisyon2= cicekler.indexOf("menekşe")+1;
+    /* IndexOf Metodu ile dizideki bir elemanın sırasını öğreniyoruz */
+    let pozisyon1= cicekler.indexOf("gül")+1; /* 2 */
+    let pozisyon2= cicekler.indexOf("menekşe")+1; /* 3 */
 
     document.write("Gülün pozisyonu :"+pozisyon1+"<br>");
     document.write("Menekşe pozisyonu :"+pozisyon2+"<br>");
 
 
-    /* LastIndexOf Metodu */
-       cicekler.push("gül") ;
+    /* LastIndexOf Metodu ile aranan bir elemanın en son görüldüğü sıra numarası elde edilir */
+       cicekler.push("gül") ; /* Diziye yine gül elemanını ekledik */
        document.write("Tüm elemanlar:"+ cicekler+"<br>");
        let sonPozisyon= cicekler.lastIndexOf("gül")+1;
        document.write("Gülün son pozisyonu :"+sonPozisyon+"<br>");
 
-      /* include metodu */ 
+      /* include metodu ile bir elemanın dizide olup olmadığını kontrol ediyoruz, 
+         eleman varsa TRUE, yoksa FALSE dönüyor
+      */ 
       let sonuc= cicekler.includes("menekşe");
       document.write("Sonuç:"+ sonuc+"<br>");
 

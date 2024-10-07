@@ -6,11 +6,13 @@
     <title>Document</title>
     <script>
 
-        const notlar = [10, 20, 70, 70, 50];
+        const notlar = [10, 20, 90, 80, 50];
         /*find metodu ile şarta uyan eleman bulunur*/
         let sonuc = notlar.find(gecenleriGetir);
         document.write("Geçen eleman:"+ sonuc+"<br>");
 
+        /*findIndex metodu dizide şarta uyan elemanın index'ini(sıra numarasını)
+        döndürür */
         let sonucIndex = notlar.findIndex(gecenleriGetir);
         document.write("Geçenin sıra numarası:"+ sonucIndex+"<br>");
 

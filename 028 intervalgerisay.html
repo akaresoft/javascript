@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+            #zaman{
+                background-color: navy;
+                color:white;
+                float:right;
+                width: 200px;
+                height: 40px;
+                font-size:30px;
+                text-align: center;
+            }
+    </style>
+
+</head>
+<body>
+    
+    <div id="zaman"></div>
+  <script>
+  dakika=1;
+  saniye=0;
+  if(dakika<10) dakikaStr="0"+dakika; 
+  if(saniye<10) saniyeStr="0"+saniye;
+            
+  document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+
+  setInterval(() => {
+    
+            if(dakika<10){
+                dakikaStr="0"+dakika;
+            }  else dakikaStr=dakika; 
+            if(saniye<10){
+                saniyeStr="0"+saniye;
+            } else saniyeStr=saniye;
+            if(dakika==0 && saniye==0){
+                alert("Süre Bitti");
+                exit();
+             }
+            document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+            if(saniye==0)    
+             { 
+                dakika--;
+                saniye=59;
+             } else saniye--;
+           
+            
+            
+        }, 1000); // 1000 milisaniye = 1 saniye
+
+
+  </script>  
+</body>
+</html>

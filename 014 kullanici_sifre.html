@@ -17,7 +17,7 @@
         adi= document.getElementById('ad').value;
         sifre= document.getElementById('sifre').value;
 
-        var hata= new Array();
+        var hata= new Array(); /* yeni bir dizi oluştur */
         var sembol = '*|,:<>[]{}`;()@&$#%!+-"/';
 
         var sembolvar=false;
@@ -30,7 +30,7 @@
 
         if(adi=="")
             hata.push('Lütfen adı boş geçmeyiniz');
-        else if (adi.length<3)
+        if (adi.length<3)
             hata.push('Lütfen adı alanını 3 karakter ve üstü giriniz');
 
 
@@ -42,23 +42,23 @@
            if (sifre.length<8)
                 hata.push('Şifre 8 karekter veya daha büyük olmalıdır.');
 
-            else if (sifre.search(/[a-z]/) < 0)
+           if (sifre.search(/[a-z]/) < 0)
                     hata.push("Şifre en az bir Küçük harf içermelidir.");
 
-            else if (sifre.search(/[A-Z]/) < 0)
+           if (sifre.search(/[A-Z]/) < 0)
                     hata.push("Şifre en az bir Büyük harf içermelidir.");
 
-            else if (sifre.search(/[0-9]/) < 0)
+           if (sifre.search(/[0-9]/) < 0)
                 hata.push("Şifre en az bir rakam içermelidir.");
 
-            else if (sembolvar==false)
+           if (sembolvar==false)
                 hata.push("Şifre en az bir sembol içermelidir.");
 
             
         }
 
         if (hata.length > 0) {
-                alert(hata.join("\n"));
+                alert(hata.join('\n'));
                 return false;
         }
         else alert('Tamam şifre uygun'); //buraya return true diyebiliriz
@@ -70,16 +70,17 @@
 <body>
     <div id="ortala">
         <h3>Kullanıcı Girişi</h3>
-        <table align="center">
-            <tr>
+        <table align="center" border="0">
+            <tr> <!-- tr satır açar -->
                 <td><label for="">Kullanıcı:</label></td>
                 <td><input type="text" name="ad" id="ad"></td>
             </tr>
-            <tr>
+
+            <tr><!-- tr satır açar -->
                 <td><label for="">Şifre:</label></td>
-                <td><input type="password" name="sifre" id="sifre"> </td>
+                <td><input type="text" name="sifre" id="sifre"> </td>
             </tr>
-            <tr>
+            <tr><!-- tr satır açar -->
                 <td colspan="2">
                     <button onclick="formkontrol()">Giriş</button>
                 </td>

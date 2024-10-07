@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sekil{
+             width: 30px; 
+             height: 30px;
+             float:left;
+             text-align: center;
+             margin:10px;
+             padding: 10px;
+             color:#FFF;
+             border:1px solid grey;
+            }
+   
+    </style>
+
+</head>
+<body onload="rastgeleUret()">
+    <button onclick="rastgeleUret()">Rastgele Sayı Üret</button> <br>
+    <div id="kutu1" class="sekil"></div>
+    <div id="kutu2" class="sekil"></div>
+    <div id="kutu3" class="sekil"></div>
+    <div id="kutu4" class="sekil"></div>
+    <div id="kutu5" class="sekil"></div>
+    <div id="kutu6" class="sekil"></div>
+
+    <script>
+
+      function rastgeleUret(){
+          // var kutular = document.querySelectorAll("[id^=kutu]"); /* div id içinde kutu geçenleri al */
+          for (var i=1; i<=6; i++){
+             rastgele=Math.floor(Math.random(1)*49+1);
+             red=Math.floor(Math.random(1)*256);
+             green=Math.floor(Math.random(1)*256);
+             blue=Math.floor(Math.random(1)*256);
+
+             document.getElementById('kutu'+i).innerHTML=rastgele;
+             document.getElementById("kutu"+i).style.backgroundColor= 'rgb('+red+','+green+','+blue+')';;
+             //kutular[i-1].innerHTML= rastgele;
+         }
+      }
+     </script>
+</body>
+</html>

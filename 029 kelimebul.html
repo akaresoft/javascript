@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelime Bul</title>
+    <style>
+        #kelimeler{
+            width: 700px;
+            height: 80px;
+            text-align: center;
+            background-color: brown;
+            color:bisque;
+            margin: 50px auto; 
+            font-size: 50px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="kelimeler"></div>
+
+    <script>
+
+        const words =["Teacher=Öğretmen", "Driver=Sürücü", "Swimmer=Yüzücü", "Cooker=Aşçı", "Clerk=Tezgahtar", 
+                        "Officer=Memur", "Academician=Akademisyen"];
+
+        var index=0;
+        setInterval(() => {
+            document.getElementById("kelimeler").textContent = words[index];
+            index = (index+1) % words.length;
+        }, 2000); // 1000 ms = 1 s
+
+    </script>
+</body>
+</html>
