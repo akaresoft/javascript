@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+
+    document.write(Math.random(1)); /* 0 ile 1 arasında rastgele sayı üretir */
+    document.write("<br>");
+
+    rastgeleSayi= Math.random(1);
+    document.write("Rastgele sayı:"+rastgeleSayi+"<br>");
+
+    x=rastgeleSayi*10; 
+    document.write("x="+x+"<br>"); //0-10 arasında rastgele sayı üretir 
+   
+    a= Math.round(x,0); // Round metodu 5.4'ü 5 yapar, 5.5'i 6 yapar, 6.7'yi 7 yapar, 
+    document.write("Round ile yuvarlanan a="+a+"<br>"); 
+   
+    b=Math.ceil(x); // Ceil metodu yukarı yuvarlama yapar
+    document.write("Yukarı yuvarlama b="+b+"<br>"); 
+   
+    c=Math.floor(x); // Floor metodu aşağı yuvarlama yapar 
+    document.write("Aşağı yuvarlama c="+c+"<br>"); 
+    
+    // 1 İLE 100 ARASI 
+    s=Math.floor(Math.random(1)*100+1);
+    document.write("<br> 1-100 arası="+s+"<br>"); 
+
+</script>
+<body>
+    
+</body>
+</html>

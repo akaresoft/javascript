@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
- i=1;
- do{
-    //Döngü içi
-    document.write(i+"<br>");
-    i++;
- }while(i<=10)
+      /* 1'den 5'e kadar sayma */
+      let i=1;
+      do{
+            document.write(i+"<br>");
+            i++;
 
- document.write("Döngü bitti <br>");
- document.write("i değeri:"+i+"<br>");
+      }while(i<=5);
+
+     /* Tek sayıları yazdırma */
+      i=1;
+      do{
+         //Döngü içi
+         document.write(i+"<br>");
+         i+=2; /* i=i+2 */
+      }while(i<=10);
+
+      document.write("Döngü bitti <br>");
+      document.write("i değeri:"+i+"<br>");
+
     </script>
 </head>
 <body>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch case</title>
+    <script>      
+      let islem, x,y;
+      
+      function toplama(a,b){
+        return a+b;
+      }
+
+      function cikarma(a,b){
+        return a-b;
+      }
+
+      function bolme(a,b){
+        if(b!=0)
+            return a/b;
+        else return "Sıfıra bölünemez";
+      }
+
+      function carpma(a,b){
+        return a*b;
+      }
+
+      while(true){
+
+        islem=prompt("Aritmetik işlemi giriniz:\n +)Toplam\n -)Çıkarma\n /)Bölme\n *) Çarpma\n X)ÇIKIŞ")
+        if(islem=="x"|| islem=="X") {
+            alert("Programdan çıkılıyor...");
+            break;
+
+         } /* While döngüsü çıkışı*/
+        x=parseFloat(prompt("1. sayıyı giriniz:"));
+        y=parseFloat(prompt("2. sayıyı giriniz:"));
+
+        switch(islem){
+            case "+": alert(toplama(x,y)); break;
+            case "-": alert(cikarma(x,y)); break;
+            case "*": alert(carpma(x,y)); break;
+            case "/": alert(bolme(x,y)); break;
+           
+            default: alert("Lütfen *,-,/,+ işaretlerinden birini giriniz"); break;
+         }
+       
+      }
+ 
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body onload() olayı</title>
+    <script>
+        function reklamGoster(){
+            var tarih = new Date();
+            alert(tarih);
+            var dakika=tarih.getMinutes();
+            if(dakika >= 35){
+                document.getElementById("reklam").style.display="none";
+            }
+        }
+    </script>
+</head>
+<body onload="reklamGoster()">
+
+    <div id="reklam">
+        <img src="images/bogaz.JPG" alt="Boğaz turu reklamı">
+    </div>
+    
+</body>
+</html>

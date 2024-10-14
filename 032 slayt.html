@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slayt(Slide) Geçişi</title>
+    <style>
+        #slide{
+            height:100%; 
+            width:auto; 
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+        <img id="slide" src="images/resim1.jpg">
+
+
+    <script>
+        const resimler =[
+                        "images/resim1.jpg", 
+                        "images/resim2.jpg", 
+                        "images/resim3.jpg"
+                        ];
+                   
+        var siraNo=0;
+        setInterval(() => {
+            document.getElementById("slide").src = resimler[siraNo];
+            siraNo = (siraNo+1) % resimler.length;
+        }, 1000); // 1000 ms = 1 s
+
+    </script>    
+</body>
+</html>

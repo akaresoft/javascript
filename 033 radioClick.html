@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button click</title>
+
+</head>
+<body>
+        <input type="radio" name="renk" id="kirmizi">
+        Kırmızı Template  <br>
+        
+        <input type="radio" name="renk" id="yesil">
+        Yeşil Template  <br>
+
+        <input type="radio" name="renk" id="mavi">
+        Mavi Template <br>
+
+        <button onclick="renkDegis()">Renk Değiş</button>
+
+    <script>
+        function renkDegis(){
+            /* Şimdiye kadar ById ile nesnelere ulaştık, şimdi TagName ile body, p gibi etiketlere ulaşıp
+                style ile biçimlendirebiliriz
+            */
+            if(document.getElementById("kirmizi").checked==true){
+                document.getElementsByTagName("body")[0].style.backgroundColor="red";
+                document.getElementsByTagName("body")[0].style.color="white";
+            }
+            else if(document.getElementById("mavi").checked==true){
+                document.getElementsByTagName("body")[0].style.backgroundColor="blue";
+                document.getElementsByTagName("body")[0].style.color="white";
+            }
+            else if(document.getElementById("yesil").checked==true){
+                document.getElementsByTagName("body")[0].style.backgroundColor="green";
+                document.getElementsByTagName("body")[0].style.color="white";
+            }
+        }
+    </script>
+</body>
+</html>

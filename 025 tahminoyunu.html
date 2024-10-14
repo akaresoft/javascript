@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    rastgele=Math.floor(Math.random(1)*100+1);
+    alert("Üretilen sayı:"+rastgele);
+
+     let hak=0;
+     let maks=5; /* Maksimum hak sayısı */
+    while(true){
+
+        if(hak>=maks){
+            alert("Üzgünüm 5 defada bilemediniz, sayı "+rastgele);
+            break;
+        }
+        girilen=parseInt(prompt("Tahmin ediniz:"));
+        if (girilen<rastgele){
+            hak++;
+            alert("Daha büyük bir sayı giriniz "+(maks-hak)+" hakkınız kaldı");
+        }else if(girilen>rastgele){
+            hak++;
+            alert("Daha küçük bir sayı giriniz "+(maks-hak)+" hakkınız kaldı");
+        }else if(girilen==rastgele){
+            alert("Tebrikler bildiniz.");
+            break;
+        }
+
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
