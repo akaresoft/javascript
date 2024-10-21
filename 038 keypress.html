@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+</head>
+<body>
+    
+    Adı<input type="text" id="adi"> <br>
+    Soyadı: <input type="text" id="soyadi"> <br>
+    Telefon: <input type="text"  id="telefon">
+
+    <script>
+           document.getElementById("adi").addEventListener("keypress", function(event) {
+                if (event.keyCode == 13) {
+                    document.getElementById("soyadi").focus();
+                }
+            });
+
+            document.getElementById("soyadi").addEventListener("keypress", function(event) {
+                if (event.keyCode == 13) {
+                    document.getElementById("telefon").focus();
+                }
+            });
+    </script>
+</body>
+</html>

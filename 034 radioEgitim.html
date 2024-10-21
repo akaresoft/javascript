@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button</title>
+    <script>
+        function egitimDegis(){
+            if(document.getElementById("radiolisans").checked==true){
+                document.getElementById("lisansuniversite").style.display="block";
+                document.getElementById("ylisansuniversite").style.display="none";
+                document.getElementById("druniversite").style.display="none";
+            }
+            else if(document.getElementById("radioyukseklisans").checked==true){
+                document.getElementById("lisansuniversite").style.display="block";
+                document.getElementById("ylisansuniversite").style.display="block";
+                document.getElementById("druniversite").style.display="none";
+            } 
+            else if(document.getElementById("radiodoktora").checked==true){
+                document.getElementById("lisansuniversite").style.display="block";
+                document.getElementById("ylisansuniversite").style.display="block";
+                document.getElementById("druniversite").style.display="block";
+            }
+        }
+    </script>
+</head>
+<body> 
+    <label for="egitim">Eğitim Seviyesi</label> <br>
+    <input type="radio" name="egitim" id="radiolisans" onclick="egitimDegis(this)">Lisans <br>
+    <input type="radio" name="egitim" id="radioyukseklisans" onclick="egitimDegis(this)">Yüksek Lisans <br>
+    <input type="radio" name="egitim" id="radiodoktora" onclick="egitimDegis(this)">Doktora  <br>
+    <table border="0">
+        <tr>
+            <td>
+                <input type="text" id="lisansuniversite" placeholder="Lisans">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="ylisansuniversite" placeholder="Yüksek Lisans">
+         
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="druniversite" placeholder="Doktora">          
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

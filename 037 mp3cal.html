@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zaman{
+            width: 390px;
+            height:120px;
+            margin:auto auto;
+            background-color: rgb(19, 7, 147);
+            color:rgb(255, 254, 253);
+            font-size: 100px;
+            text-align: center;
+        }
+    </style>
+    
+    <script>   
+       function muzikCal() {
+            var audio = new Audio('media/muzik.mp3');
+            audio.loop = false;
+            audio.play(); 
+        }
+
+        let dakika=1;
+        function baslat(){
+            dakika=parseInt(document.getElementById("sure").value);
+            /*İlk açılışta formatlama*/
+            saniye=0;
+            dakikaStr="";
+            saniyeStr="";
+            if(dakika<10) dakikaStr="0"+dakika; 
+            if(saniye<10) saniyeStr="0"+saniye;
+            
+            document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+
+            const sonuc = setInterval(geriSay, 1000);
+            document.getElementById("mesaj").innerHTML="Lütfen telefon bakma";
+        }
+
+        /* Geri sayma fonksiyonu*/
+
+        function geriSay(){
+            /* Formatlama 10'dan küçükse önüne 0 yaz*/
+                if(dakika<10){
+                    dakikaStr="0"+dakika;
+                }  else dakikaStr=dakika; 
+                if(saniye<10){
+                    saniyeStr="0"+saniye;
+                } else saniyeStr=saniye;
+
+          /* Süre dolduysa ekrana yaz*/  
+            if(dakika==0 && saniye==0){
+                document.getElementById("zaman").innerHTML="Zaman doldu";
+                clearInterval(sonuc);
+                muzikCal(); /*müzik çalışıyoruz*/
+             }
+            document.getElementById("zaman").innerHTML=dakikaStr+":"+saniyeStr;
+            if(saniye==0)    
+             { 
+                dakika--;
+                saniye=59;
+             } else saniye--;
+            }
+    </script>
+</head>
+<body>
+    
+   <center>
+    <label for="">Süre giriniz(dk.):</label>
+    <input type="text" id="sure" value="25" minlength="1" maxlength="2">
+
+    <button onclick="baslat()">Başlat</button>    <br>
+    <br>
+    <div id="zaman"></div>
+    <div id="mesaj"></div>
+</center>
+</body>
+</html>

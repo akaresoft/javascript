@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const canvas = document.getElementById("game");
+        const context = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
+
+            let gameover = false;
+            let x = canvas.width / 2;
+            let y = canvas.height / 2;
+            let dx = 0;
+            let dy = 0;
+
+            const state = {
+            "ArrowRight": false,
+            "ArrowLeft": false,
+            "ArrowUp": false,
+            "ArrowDown": false
+            }
+
+            document.addEventListener("keydown", keyDownHandler, false);
+            document.addEventListener("keyup", keyUpHandler, false);
+
+function determineDirection() {
+  const {
+    ArrowRight,
+    ArrowLeft,
+    ArrowUp,
+    ArrowDown
+  } = state
+  if (ArrowRight && ArrowUp) {
+    return {
+      dx: .25,
+      dy: -.25
+    };
+  }
+  if (ArrowRight && ArrowDown) {
+    return {
+      dx: .25,
+      dy: .25
+    };
+  }
+  if (ArrowLeft && ArrowUp) {
+    return {
+      dx: -.25,
+      dy: -.25
+    };
+  }
+  if (ArrowLeft && ArrowDown) {
+    return {
+      dx: -.25,
+      dy: .25
+    };
+  }
+  if (ArrowLeft) {
+    return {
+      dx: -.25,
+      dy: 0
+    }
+  }
+  if (ArrowRight) {
+    return {
+      dx: .25,
+      dy: 0
+    }
+  }
+  if (ArrowUp) {
+    return {
+      dx: 0,
+      dy: -.25
+    }
+  }
+  if (ArrowDown) {
+    return {
+      dx: 0,
+      dy: .25
+    }
+  }
+  return {
+    dx: 0,
+    dy: 0
+  }
+}
+
+function keyDownHandler({
+  key
+}) {
+  state[key] = true;
+}
+
+function keyUpHandler({
+  key
+}) {
+  state[key] = false;
+}
+
+function draw() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.beginPath();
+  context.arc(x, y, 10, 0, Math.PI * 2, false);
+  context.fillStyle = "red";
+  context.fill();
+  context.closePath();
+}
+
+function logic() {
+  const direction = determineDirection();
+
+  if (direction.dx) {
+    dx = dx + direction.dx
+  }
+
+  if (direction.dy) {
+    dy = dy + direction.dy
+  }
+
+  x = x + dx;
+  y = y + dy;
+;
+  if (dx > 0) {
+    dx -= 0.02;
+  }
+  if (dx < 0) {
+    dx += 0.02;
+  }
+  if (dy > 0) {
+    dy -= 0.02;
+  }
+  if (dy < 0) {
+    dy += 0.02;
+  }
+
+}
+
+function play() {
+  draw();
+  logic();
+}
+
+setInterval(play, 50);
+    </script>
+</head>
+<body>
+    <canvas id="game"></canvas>
+</body>
+</html>
