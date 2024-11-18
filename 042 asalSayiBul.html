@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aralık Toplam</title>
+    <script>
+
+        function asalKontrol(sayi){
+            asal=true;      
+            if (sayi==1 || sayi==0) return false;
+            if (sayi==2) return true;
+            for(i=2;i<sayi;i++){
+                if(sayi%i==0)
+                    asal=false;
+            }
+            return asal;
+        }
+
+        function hesapla(){
+            let i, toplam=0, sayilar="";
+             sayi1=parseInt(document.getElementById("s1").value);
+             sayi2=parseInt(document.getElementById("s2").value);
+
+             for(i=sayi1;i<=sayi2;i++){
+                   if (asalKontrol(i))
+                   {
+                    sayilar+=i+" ";
+                   }
+                   document.getElementById("sonuc").value=sayilar;
+             }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <label for="s1">Sayı 1:</label>
+    <input type="number" id="s1"> <br>
+
+    <label for="s2">Sayı 2:</label>
+    <input type="number" id="s2"> <br>
+
+    <textarea  id="sonuc" cols="30" rows="5">
+
+    </textarea> <br>
+    
+    <button onclick="hesapla()">Asal Sayıları Bul</button>
+   <!--  <div id="sonuc"></div>-->
+
+    
+</body>
+</html>

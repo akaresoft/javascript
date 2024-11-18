@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raatgele</title>
+    <style>
+        #tahminBilgi{ 
+            background-color: orange;
+            color:#FFF;
+        }
+        #puanBilgi{
+            background-color: green; 
+            color:#FFF;
+        }
+    </style>
+    <script>
+        let sonuc, puan=0;
+        function uret(){
+            islemler=['+','-','*','/']
+            sayi1=Math.floor(Math.random(1)*20+1);
+            sayi2=Math.floor(Math.random(1)*20+1);
+            islemindex=Math.floor(Math.random(1)*4); //0,1,2,3 değerlerinden biri üretilecek
+            secilen=islemler[islemindex];
+            document.getElementById("s1").value=sayi1;
+            document.getElementById("s2").value=sayi2;
+            document.getElementById("islem").value=secilen;
+            document.getElementById("tahminBilgi").value="";
+            if (secilen=='+'){
+                sonuc =sayi1+sayi2;
+            } else if(secilen=='-'){
+                sonuc =sayi1-sayi2;
+            }else if(secilen=='*'){
+                sonuc =sayi1*sayi2;
+            }else if(secilen=='/'){
+                sonuc =sayi1/sayi2; //virgülden sonra 2 hane
+            }
+            alert("Sonuç="+sonuc);
+     
+        }
+        function tahminet(){
+            tahmin=parseFloat(document.getElementById("tahminBilgi").value);
+            if (sonuc==tahmin){
+                puan+=5;
+                alert("Bravo +5 Puan");
+                document.getElementById("puanBilgi").value=puan;
+            }else{
+                puan-=5;
+                alert("Cevap="+sonuc+" ,üzgünüm -5 Puan");
+                document.getElementById("puanBilgi").value=puan;
+            }
+            uret();
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <table align="center">
+        <tr>
+            <td>Sayı 1:</td>
+            <td>İşlem</td>
+            <td>Sayı 2:</td>
+            <td></td>
+            <td>Sonuç</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="text" id="s1" size="2" readonly></td>
+            <td align="center"><input type="text" id="islem" size="2" readonly></td>
+            <td align="center"><input type="text" id="s2" size="2" readonly></td>
+            <td align="center">=</td>
+            <td align="center">
+                <input type="text" id="tahminBilgi" size="2">
+                <button onclick="tahminet()">Tahmin Et</button>
+            </td>
+        </td>
+            <tr>
+                <td colspan="5" align="center">
+                    <button onclick="uret()">Yeni Oyun</button>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" align="center">
+                    Puanınız:<input type="text" id="puanBilgi" value="0" size="5">
+                </td>
+            </tr>
+            
+        </tr>
+
+    </table>
+
+</body>
+</html>

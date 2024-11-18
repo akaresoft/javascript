@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şemsiye</title>
+    <style>
+       /* #semsiye{
+
+            display: block;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }*/
+
+        .nesne {
+            height: 100vh;/* vertical height =dikey yükseklik*/
+            width: 100%; /* genişlik %100*/
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    </style>
+
+    <script>
+        function sekilOrtala(){
+            //ekranGenislik=window.screen.width; //Tüm ekran genişliği
+            //ekranYukseklik=window.screen.height; //Tüm ekran yüksekliği
+            //alert(ekranGenislik+"x"+ekranYukseklik);
+            //body alanının genişlik ve yüksekliği altta-bize bu bilgi lazım
+            genislik= document.body.clientWidth;
+            yukseklik=document.body.clientHeight;
+           // alert(genislik+"x"+yukseklik);
+            //semsiye id'li resmin genişliğini öğreniyoruz
+            nesneGenislik=  document.getElementById("semsiye").style.width;
+            nesneYukseklik=  document.getElementById("semsiye").style.height;
+            //resmi sol boşluğunu hesaplıyoruz. 
+            solbosluk=(genislik-nesneGenislik)/2;
+            ustbosluk=(yukseklik-nesneYukseklik)/2;
+            document.getElementById("semsiye").style.marginLeft=solbosluk+"px";
+            document.getElementById("semsiye").style.marginTop=ustbosluk+"px";
+        }
+
+        function semsiyeKapat(){
+            document.getElementById("semsiye").src ="images/semsiye_kapali.jpg";
+        }
+
+        function semsiyeAc(){
+            document.getElementById("semsiye").src ="images/semsiye_acik.jpg";
+          
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div class="nesne">
+        <img src="images/semsiye_kapali.jpg" id="semsiye"  onmousemove="semsiyeAc()" 
+        onmouseleave="semsiyeKapat()" >
+    </div>
+  <!--   <img src="images/bogaz.JPG" class="center" alt="">-->
+    
+</body>
+</html>
