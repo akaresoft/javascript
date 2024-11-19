@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güvenlik Kodu (Captcha)</title>
+    <style>
+        #guvenlik{
+            background-color: orange;
+            color:#FFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function uret(){
+            let guvenlikKodu="";
+            harfler=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            //Dizimiz 0-25 arası indis alır harfler[0] a harfi, harfler[25] z harfi olur
+            
+            for(i=1;i<=6;i++){ // 6 haneli olması için
+               
+                secilen= Math.floor(Math.random(1)*2);
+                if(secilen==0) // 0 ise harf üret
+                {
+                    harfIndex= Math.floor(Math.random(1)*26);
+                    uretilenHarf=harfler[harfIndex];
+                    guvenlikKodu+=uretilenHarf;
+
+                }else if(secilen==1){ //1 ise rakam üret
+                    uretilenSayi=Math.floor(Math.random(1)*9+1);
+                    guvenlikKodu+=uretilenSayi;
+                }
+            }
+           // alert(guvenlikKodu);
+            document.getElementById("guvenlik").value=guvenlikKodu;
+
+           
+        }
+  
+
+    </script>
+</head>
+<body>
+
+    <button onclick="uret()">Güvenlik Kodu Üret</button> <br><br>
+    Güvenlik Kodu:<input type="text"  id="guvenlik">
+</body>
+</html>

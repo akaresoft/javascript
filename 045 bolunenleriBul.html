@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İki sayı arasında tam bölünenleri Bulma</title>
+    <script>
+        function bolunenleriBul(){
+            let baslangic, bitis, sayilar="";
+            baslangic = parseInt(document.getElementById("s1").value);
+            bitis = parseInt(document.getElementById("s2").value);
+
+            for(i=baslangic; i<=bitis; i++){
+                if (i%3==0 && i%7==0){
+                    sayilar+=i+" ";
+                }
+            }
+            if (sayilar=="")
+                document.getElementById("sonuc").innerHTML="Herhangi bir sayı bulunamadı";
+            else
+                document.getElementById("sonuc").innerHTML=sayilar;
+        }
+    </script>
+</head>
+<body>
+    Sayı1:
+    <input type="text"  id="s1" placeholder="Başlangıç sayısı"> <br>
+    Sayı2:
+    <input type="text"  id="s2" placeholder="Bitiş sayısı"> <br>
+    <button onclick="bolunenleriBul()">Tam bölünenleri Bul</button> <br>
+    <textarea id="sonuc" cols="30" rows="5"></textarea>
+   
+</body>
+</html>

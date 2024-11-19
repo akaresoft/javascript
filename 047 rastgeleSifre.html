@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifre Üretme</title>
+    <script>
+
+function sifreUret(){
+            let sifre="";
+            kucukharfler=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            buyukharfler=["A","B","C","D"];
+            semboller=["+","-","*","?","@"]
+sifreler="";
+document.getElementById("sifreAlani").value="";
+            //Dizimiz 0-25 arası indis alır harfler[0] a harfi, harfler[25] z harfi olur
+            adet=document.getElementById("adet").value;
+           for(j=1;j<=adet;j++){
+      
+            for(i=1;i<=12;i++){ // 12 haneli olması için
+               
+                secilen= Math.floor(Math.random(1)*4);
+                if(secilen==0) // 0 ise büyük harf üret
+                {
+                    harfIndex= Math.floor(Math.random(1)*4);
+                    uretilenHarf=buyukharfler[harfIndex];
+                    sifre+=uretilenHarf;
+
+                }
+                if(secilen==1) // 1 ise küçük harf üret
+                {
+                    harfIndex= Math.floor(Math.random(1)*26);
+                    uretilenHarf=kucukharfler[harfIndex];
+                    sifre+=uretilenHarf;
+
+                }else if(secilen==2){ //2 ise rakam üret
+                    uretilenSayi=Math.floor(Math.random(1)*9+1);
+                    sifre+=uretilenSayi;
+                }else if(secilen==3){ //3 ise sembol üret
+                    sembolIndex= Math.floor(Math.random(1)*5);
+                    uretilenSembol=semboller[sembolIndex];
+                    sifre+=uretilenSembol;
+                }
+            }
+            
+            sifreler+=sifre+'\n';
+            sifre="";
+            }
+           // alert(guvenlikKodu);
+            document.getElementById("sifreAlani").value=sifreler;
+
+           
+        }
+  
+
+    
+    </script>
+</head>
+<body>
+    Adet
+    <input type="text"  id="adet" value="20"> 
+    <button onclick="sifreUret()">Şifre Üret</button> <br>
+ 
+    <textarea id="sifreAlani" cols="30" rows="10"></textarea>
+</body>
+</html>
